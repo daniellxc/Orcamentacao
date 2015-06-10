@@ -23,3 +23,28 @@ c:\users\daniel.cardoso\documents\visual studio 2013\Projects\Conductor.Orcament
 c:\users\daniel.cardoso\documents\visual studio 2013\Projects\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\obj\Debug\Conductor.Orcamentacao.Web.dll
 c:\users\daniel.cardoso\documents\visual studio 2013\Projects\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\obj\Debug\Conductor.Orcamentacao.Web.pdb
 c:\users\daniel.cardoso\documents\visual studio 2013\Projects\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\bin\GridMvc.dll
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\bin\Conductor.Orcamentacao.Web.dll.config
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\bin\Conductor.Orcamentacao.Web.dll
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\bin\Conductor.Orcamentacao.Web.pdb
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\bin\DAL.dll
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\bin\EntityFramework.dll
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\bin\EntityFramework.SqlServer.dll
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\bin\GridMvc.dll
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\bin\System.Web.Helpers.dll
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\bin\System.Web.Mvc.dll
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\bin\System.Web.Razor.dll
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\bin\System.Web.Webpages.Deployment.dll
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\bin\System.Web.Webpages.dll
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\bin\System.Web.Webpages.Razor.dll
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\bin\DAL.pdb
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\bin\EntityFramework.xml
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\bin\EntityFramework.SqlServer.xml
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\bin\System.Web.Razor.xml
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\bin\System.Web.Webpages.xml
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\bin\System.Web.Webpages.Deployment.xml
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\bin\System.Web.Webpages.Razor.xml
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\bin\System.Web.Helpers.xml
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\bin\System.Web.Mvc.xml
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\obj\Debug\Conductor.Orcamentacao.Web.csprojResolveAssemblyReference.cache
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\obj\Debug\Conductor.Orcamentacao.Web.dll
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\Conductor.Orcamentacao.Web\obj\Debug\Conductor.Orcamentacao.Web.pdb

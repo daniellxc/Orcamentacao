@@ -17,7 +17,7 @@
 
             <div class="form-group">
                 @Html.Label("Classe")
-                @Html.TextBoxFor(p => p.Classe, new { @class = "form-control" })
+                @Html.DropDownList("Classe",new SelectList(Conductor.Orcamentacao.Web.Acessorio.Apoio.GetClasses()),"---", new { @class = "form-control" })
                 @Html.ValidationMessageFor(p => p.Classe)
             </div>
             <div class="form-group">

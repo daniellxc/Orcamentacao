@@ -16,3 +16,12 @@ C:\Users\daniel.cardoso\Documents\Visual Studio 2013\Projects\Conductor.Orcament
 C:\Users\daniel.cardoso\Documents\Visual Studio 2013\Projects\Conductor.Orcamentacao\DAL\obj\Debug\DAL.dll
 C:\Users\daniel.cardoso\Documents\Visual Studio 2013\Projects\Conductor.Orcamentacao\DAL\obj\Debug\DAL.pdb
 C:\Users\daniel.cardoso\Documents\Visual Studio 2013\Projects\Conductor.Orcamentacao\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\DAL\bin\Debug\DAL.dll
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\DAL\bin\Debug\DAL.pdb
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\DAL\bin\Debug\EntityFramework.dll
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\DAL\bin\Debug\EntityFramework.xml
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\DAL\obj\Debug\DAL.dll
+C:\GIT\Orcamentacao\Conductor.Orcamentacao\DAL\obj\Debug\DAL.pdb

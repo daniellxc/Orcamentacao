@@ -24,7 +24,7 @@ namespace DAL.Classes.BO
             try
             {
                 //para parametros cadastrados sem nome, o nome do método será atribuido ao campo "nome"
-                if (parametroSistema.Nome.Trim().Equals(string.Empty))
+                if (parametroSistema==null)
                     parametroSistema.Nome = parametroSistema.Metodo;
 
 

@@ -137,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Acessorio\ActionResultExtensions.cs" />
+    <Compile Include="Acessorio\Apoio.cs" />
     <Compile Include="Acessorio\CustomController.cs" />
     <Compile Include="Acessorio\Mensagem.cs" />
     <Compile Include="Acessorio\TempDataActionResult.cs" />
