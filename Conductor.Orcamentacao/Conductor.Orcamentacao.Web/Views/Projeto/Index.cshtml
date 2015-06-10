@@ -1,0 +1,41 @@
+﻿@using GridMvc.Html
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/Scripts.js"></script>
+
+
+
+
+
+</head>
+<body>
+    <div>
+        <h3>Projetos Cadastrados</h3> 
+      
+
+        @Html.ActionLink("Novo projeto", "Adicionar", "", new { @class="btn btn-primary" })
+        
+        @Html.Grid(new DAL.Classes.BO.ProjetoBO().ListarProjetos()).Columns(columns=>
+                         {
+                             columns.Add(p => p.IdInterno).Titled("ID");
+                             columns.Add(p => p.Nome).Titled("Projeto");
+                             columns.Add(p => p.FK_Recurso.Alias).Titled("Recurso alocado");
+                             columns.Add().Encoded(false).Sanitized(false).RenderValueAs(b => @Html.ActionLink("ver requisitos", "Index", "Requisito", new { idProjeto = b.IdProjeto }, ""));
+                             columns.Add().Encoded(false).Sanitized(false).RenderValueAs(b => @Html.ActionLink("Adicionar Requisito", "CadastrarRequisito", "Requisito", new DAL.Classes.DTO.ProjetoRequisitoDTO() { IdProjeto = b.IdProjeto, IdInterno = "", Descricao = "" }, ""));
+                             columns.Add().Encoded(false).Sanitized(false).RenderValueAs(b => @Html.ActionLink("Orçamentação", "EstimativaProjeto", "Atividade", new { idProjeto = b.IdProjeto }, ""));
+                             columns.Add().Encoded(false).Sanitized(false).RenderValueAs(b => @Html.ActionLink(" ", "Editar", new { idProjeto = b.IdProjeto }, new { @class = "glyphicon glyphicon-pencil" }));
+                             columns.Add().Encoded(false).Sanitized(false).RenderValueAs(b => @Html.ActionLink(" ", "Excluir", new { idProjeto = b.IdProjeto }, new { @onclick = "return Confirm('Deseja realmente excluir este projeto?');", @class = "glyphicon glyphicon-remove" }));
+                         }
+        
+        ).EmptyText("Nenhum projeto encontrato").WithPaging(20)
+    </div>
+</body>
+</html>

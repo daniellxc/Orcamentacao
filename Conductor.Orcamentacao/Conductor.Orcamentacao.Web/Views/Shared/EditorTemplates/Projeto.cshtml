@@ -1,0 +1,51 @@
+﻿@model DAL.Classes.DTO.ProjetoDTO
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Projeto</title>
+</head>
+<body>
+    <div> 
+
+    
+        <div class="row">
+            <div class="col-lg-4">
+                <fieldset>
+                    <legend>Cadastrar Projeto</legend>
+                    <div class="form-group">
+                        @Html.Label("ID do Projeto")
+                        @Html.TextBoxFor(model => model.IdInterno, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.IdInterno)
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Nome do Projeto")
+                        @Html.TextBoxFor(model => model.Nome, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Nome)
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Recurso")
+                        @Html.DropDownListFor(model => model.IdRecurso, new SelectList(new DAL.Classes.BO.RecursoBO().GetRecursosAtivos(),"IdRecurso","Alias"),"---", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.IdRecurso)
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("Ativo")
+                        @Html.EditorFor(model => model.Ativo, new { @class = "form-control" })
+                       
+                    </div>
+                    @if (Model!= null)
+                    { @Html.HiddenFor(model => model.IdProjeto) }
+                      
+                </fieldset>
+
+            </div>
+        </div>
+
+
+        
+
+    </div>
+</body>
+</html>

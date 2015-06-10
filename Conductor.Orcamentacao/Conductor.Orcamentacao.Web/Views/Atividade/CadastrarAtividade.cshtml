@@ -1,0 +1,49 @@
+﻿
+
+<script src="~/Scripts/jquery-1.9.1.min.js"></script>
+@*<script>
+
+    $(document).ready(function(){
+        $("#cadAtividade").hide($("#cadAtividade").val()=="0");
+
+        $("#IdProjetos").change(function () {
+            if ($("#IdProjetos").val() != "0"){
+                $("#cadAtividade").show();
+                $("#idProjeto").val(($("#IdProjetos").val()));
+            }
+               
+            else
+                $("#cadAtividade").hide();
+        })
+    })
+    
+</script>*@
+
+
+<div class="container">
+    <div class="row">
+       
+            <div class="form-group">
+             
+                @Html.ValidationMessage("IdProjetos")
+            </div>
+       
+    </div>
+    <div class="row" id="cadAtividade">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    @using (Html.BeginForm("SalvarAtividade", "Atividade", FormMethod.Post))
+                    {
+                   
+                        @Html.EditorForModel("Atividade")
+                         <input type="submit" value="Salvar" class="btn btn-primary form-control" />
+                    }
+                   
+                </div>
+            </div>
+           
+
+    </div>
+
+
+</div>

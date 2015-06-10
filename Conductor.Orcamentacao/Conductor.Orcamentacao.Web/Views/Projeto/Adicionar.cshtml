@@ -1,0 +1,20 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Adicionar</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm("SalvarProjeto", "Projeto"))
+        {
+            @Html.ValidationSummary(true)
+            @Html.EditorForModel("Projeto")
+            
+            <input type="submit" value="Salvar" class="btn btn-primary" />
+        }
+    </div>
+</body>
+</html>

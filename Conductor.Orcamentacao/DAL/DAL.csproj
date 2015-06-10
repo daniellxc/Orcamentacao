@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B4C9D611-41E5-4115-96AC-C588852A1286}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\AbstractCrud.cs" />
+    <Compile Include="Classes\BO\ParametroSistemaBO.cs" />
+    <Compile Include="Classes\BO\ProjetoAtividadeBO.cs" />
+    <Compile Include="Classes\BO\ProjetoAtividadePrioridadeBO.cs" />
+    <Compile Include="Classes\BO\ProjetoAtividadeRiscoBO.cs" />
+    <Compile Include="Classes\BO\ProjetoBO.cs" />
+    <Compile Include="Classes\BO\ProjetoRequisitoBO.cs" />
+    <Compile Include="Classes\BO\RecursoBO.cs" />
+    <Compile Include="Classes\BO\TipoParametroSistemaBO.cs" />
+    <Compile Include="Classes\Context.cs" />
+    <Compile Include="Classes\DAO\ParametroSistemaDAO.cs" />
+    <Compile Include="Classes\DAO\ProjetoAtividadeDAO.cs" />
+    <Compile Include="Classes\DAO\ProjetoAtividadePrioridadeDAO.cs" />
+    <Compile Include="Classes\DAO\ProjetoAtividadeRiscoDAO.cs" />
+    <Compile Include="Classes\DAO\ProjetoDAO.cs" />
+    <Compile Include="Classes\DAO\ProjetoRequisitoDAO.cs" />
+    <Compile Include="Classes\DAO\RecursoDAO.cs" />
+    <Compile Include="Classes\DAO\TipoParametroSistemaDAO.cs" />
+    <Compile Include="Classes\DTO\ParametroSistemaDTO.cs" />
+    <Compile Include="Classes\DTO\ProjetoAtividadeDTO.cs" />
+    <Compile Include="Classes\DTO\ProjetoAtividadePrioridadeDTO.cs" />
+    <Compile Include="Classes\DTO\ProjetoAtividadeRiscoDTO.cs" />
+    <Compile Include="Classes\DTO\ProjetoDTO.cs" />
+    <Compile Include="Classes\DTO\ProjetoRequisitoDTO.cs" />
+    <Compile Include="Classes\DTO\RecursoDTO.cs" />
+    <Compile Include="Classes\DTO\TipoParametroSistemaDTO.cs" />
+    <Compile Include="Classes\Tools\Exceptions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

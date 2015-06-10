@@ -1,0 +1,24 @@
+﻿@model int
+@using GridMvc.Html
+@{
+    List<DAL.Classes.DTO.ProjetoAtividadeDTO> atividades = new DAL.Classes.BO.ProjetoAtividadeBO().ListarAtididadesPorProjeto(Model);
+}
+
+<div id="estRelatorio">
+   
+    @Html.Grid(atividades).Columns(c=> 
+        {
+             c.Add(a => a.FK_Requisito.IdInterno).Titled("Requisito");
+             c.Add(a => a.Descricao).Titled("Atividade");
+             c.Add(a => a.Solucao).Titled("Solução proposta");
+             c.Add(a => a.FK_Prioridade.Nome).Titled("Prioridade");
+             c.Add(a => a.FK_Risco.Nome).Titled("Risco");
+             c.Add(a => a.Custo).Titled("Custo");
+   
+        }
+   
+    
+    ).EmptyText("Não foi realizada orçamentação para este projeto.")
+
+   
+</div>

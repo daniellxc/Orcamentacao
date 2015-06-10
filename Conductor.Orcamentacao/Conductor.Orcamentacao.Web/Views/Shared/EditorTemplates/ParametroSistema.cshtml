@@ -1,0 +1,50 @@
+﻿@model DAL.Classes.DTO.ParametroSistemaDTO
+
+@{
+    SelectList tiposParametro = new SelectList(new DAL.Classes.BO.TipoParametroSistemaBO().ListarAtivos(), "IdTipoParametroSistema", "Nome");
+}
+
+<div class="row">
+
+    <div class="col-lg-4">
+        <fieldset>
+            <legend>Cadastro de Parâmetros do Sistema</legend>
+            <div class="form-group">
+                @Html.Label("Tipo do parâmetro")
+                @Html.DropDownListFor(p => p.IdTipoParametroSistema, tiposParametro, "---", new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.IdTipoParametroSistema)
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Classe")
+                @Html.TextBoxFor(p => p.Classe, new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.Classe)
+            </div>
+            <div class="form-group">
+                @Html.Label("Método")
+                @Html.TextBoxFor(p => p.Metodo, new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.Metodo)
+            </div>
+            <div class="form-group">
+                @Html.Label("Nome")
+                @Html.TextBoxFor(p => p.Nome, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Valor")
+                @Html.TextBoxFor(p => p.Valor, new { @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.Valor)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(p => p.Ativo)
+                @Html.CheckBoxFor(p => p.Ativo, new { @class = "form-control" })
+            </div>
+
+            @if (Model!=null)
+            {
+                @Html.HiddenFor(p => p.IdParametroSistema)
+            }
+               
+        </fieldset>
+
+    </div>
+</div>

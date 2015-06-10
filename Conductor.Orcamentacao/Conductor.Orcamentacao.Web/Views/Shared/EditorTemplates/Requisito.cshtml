@@ -1,0 +1,39 @@
+﻿@model DAL.Classes.DTO.ProjetoRequisitoDTO
+
+@{
+   
+    
+    string idProjeto = Model != null ? Model.IdProjeto.ToString() : "0"; 
+    SelectList projetos = new SelectList(new DAL.Classes.BO.ProjetoBO().ListarProjetos(),"IdProjeto","Nome",idProjeto);
+   
+    
+}
+
+<div class="row">
+
+    <div class="col-lg-4">
+        <fieldset>
+            <legend>Cadastrar Requisito</legend>
+            <div class="form-group">
+                @Html.Label("Projeto")
+                @Html.DropDownListFor(r => r.IdProjeto, projetos, "---", new {@class="form-control" })
+                @Html.ValidationMessageFor(r=>r.IdProjeto)
+            </div>
+            <div class="form-group">
+                @Html.Label("ID Requisito")
+                @Html.TextBoxFor(r => r.IdInterno,new { @class = "form-control" })
+                @Html.ValidationMessageFor(r => r.IdInterno)
+            </div>
+            <div class="form-group">
+                @Html.Label("Descrição")
+                @Html.TextBoxFor(r => r.Descricao, new { @class = "form-control" })
+                @Html.ValidationMessageFor(r => r.Descricao)
+            </div>
+            @if (Model.IdRequisito != 0)
+            { @Html.HiddenFor(r => r.IdRequisito, Model.IdRequisito)
+            }
+               
+        </fieldset>
+
+    </div>
+</div>

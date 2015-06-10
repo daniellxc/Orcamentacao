@@ -1,0 +1,8 @@
+﻿
+@using (Html.BeginForm("SalvarRecurso", "Recurso"))
+{
+    @Html.ValidationSummary(true)
+    @Html.EditorForModel("Recurso")
+
+    <input type="submit" value="Salvar" />
+}

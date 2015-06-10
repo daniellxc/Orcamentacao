@@ -1,0 +1,29 @@
+﻿@using GridMvc.Html
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/Scripts.js"></script>
+</head>
+<body>
+    <div>
+        <h3>Recursos Cadastrados</h3>
+
+        @Html.ActionLink("Novo Recurso", "Adicionar", "", new { @class = "btn btn-primary" })
+
+        @Html.Grid(new DAL.Classes.BO.RecursoBO().GetRecursos()).Columns(columns =>
+                         {
+                             columns.Add(p => p.Nome).Titled("Recurso");
+                             columns.Add(p => p.Alias).Titled("Alias");
+                             columns.Add().Encoded(false).Sanitized(false).RenderValueAs(b => @Html.ActionLink("Editar", "Editar", new { IdRecurso = b.IdRecurso }));
+                             columns.Add().Encoded(false).Sanitized(false).RenderValueAs(b => @Html.ActionLink("Excluir", "Excluir", new { IdRecurso = b.IdRecurso }, new { @onclick = "return Confirm('Deseja realmente excluir este recurso?');" }));
+                         }
+
+        ).EmptyText("Nenhum recurso encontrato").WithPaging(20)
+    </div>
+</body>
+</html>

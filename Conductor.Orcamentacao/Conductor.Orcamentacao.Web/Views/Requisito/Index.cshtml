@@ -1,0 +1,14 @@
+﻿@model int
+@using GridMvc.Html
+<script src="~/Scripts/Scripts.js"></script>
+
+
+<h3>Requisitos do Projeto</h3>
+@Html.Grid(new DAL.Classes.BO.ProjetoRequisitoBO().GetRequisitosDoProjeto(Model)).Columns(c =>
+{
+    c.Add(r => r.IdInterno).Titled("Id Requisito");
+    c.Add(r => r.Descricao).Titled("Descrição");
+    c.Add().Encoded(false).Sanitized(false).RenderValueAs(r => @Html.ActionLink("ver atividades", "Index", "Atividade", new { idRequisito = r.IdRequisito }, ""));
+    c.Add().Encoded(false).Sanitized(false).RenderValueAs(r => @Html.ActionLink(" ", "Editar", new { idRequisito = r.IdRequisito }, new { @class = "glyphicon glyphicon-pencil" }));
+    c.Add().Encoded(false).Sanitized(false).RenderValueAs(r => @Html.ActionLink(" ", "Excluir", new { idRequisito = r.IdRequisito }, new { @onclick = "return Confirm('Deseja realmente excluir este requisito?');", @class = "glyphicon glyphicon-remove" }));
+})

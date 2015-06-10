@@ -1,0 +1,31 @@
+﻿@using GridMvc.Html
+
+<div class="row">
+
+    @Html.ActionLink("Novo parâmetro", "CadastrarParametro",new DAL.Classes.DTO.ParametroSistemaDTO(),new{@class="btn btn-primary"})
+
+    @Html.Grid(new DAL.Classes.BO.ParametroSistemaBO().ListarTodos()).Columns(c=>
+    {
+        c.Add(p => p.Nome).Titled("Parâmetro");
+        c.Add(p => p.Valor).Titled("Valor");
+        c.Add(p => p.Classe).Titled("Classe");
+        c.Add(p => p.Metodo).Titled("Método");
+        c.Add().Encoded(false).Sanitized(false).RenderValueAs(r => Ativo(r.Ativo)).Titled("Ativo");
+    }
+   
+    )
+
+@helper Ativo(bool ativo) 
+{ 
+    if(ativo)
+     {
+        <span class="label label-success">SIM</span>
+     }
+
+    else{
+        <span class="label label-danger">NÃO</span>
+     }
+
+}
+
+</div>

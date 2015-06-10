@@ -1,0 +1,42 @@
+﻿@model int
+
+@using GridMvc.Html
+
+
+<script src="~/Scripts/Scripts.js"></script>
+
+<h3>Atividades do Requisito</h3>
+
+
+@Html.Grid(new DAL.Classes.BO.ProjetoAtividadeBO().ListarAtididadesPorRequisito(Model)).Columns(c =>
+{
+    c.Add(r => r.Descricao).Titled("Atividade");
+    c.Add(r => r.FK_Requisito.IdInterno).Titled("Requisito");
+    c.Add(r => r.FK_Prioridade.Nome).Titled("Prioridade");
+    c.Add(r => r.FK_Risco.Nome).Titled("Risco").Encoded(false).Sanitized(false).RenderValueAs(c1=> CustomRisco(c1.FK_Risco.Nome));
+    c.Add().Encoded(false).Sanitized(false).RenderValueAs(r => @Html.ActionLink(" ", "Editar", new { idAtividade = r.IdAtividade }, new { @class = "glyphicon glyphicon-pencil" }));
+    c.Add().Encoded(false).Sanitized(false).RenderValueAs(r => @Html.ActionLink(" ", "Excluir", new { idAtividade = r.IdAtividade }, new { @onclick = "return Confirm('Deseja realmente excluir esta atividade?');", @class = "glyphicon glyphicon-remove" }));
+}).EmptyText("Sem atividades para este requisito")
+
+
+
+@helper CustomRisco(string risco) 
+   { 
+         switch(risco.ToLower())
+         {
+             case "baixo":
+             <span class="label label-success">@risco</span>
+                 break;
+             case "médio":
+            <span class="label label-warning">@risco</span>
+                 break;
+             case "alto":
+            <span class="label label-danger">@risco</span>
+                 break;
+             default:
+            <span class="label label-default">@risco</span>
+                 break;
+         }
+
+
+}

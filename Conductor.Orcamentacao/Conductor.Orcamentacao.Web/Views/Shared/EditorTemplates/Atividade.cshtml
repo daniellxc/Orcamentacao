@@ -1,0 +1,115 @@
+﻿@model  DAL.Classes.DTO.ProjetoAtividadeDTO
+            @{
+                SelectList prioridades = new SelectList(new DAL.Classes.BO.ProjetoAtividadePrioridadeBO().GetPrioridades(), "IdPrioridadeAtividade", "Nome");
+                SelectList riscos = new SelectList(new DAL.Classes.BO.ProjetoAtividadeRiscoBO().GetRiscos(), "IdRiscoAtividade", "Nome");
+                SelectList projetos = new SelectList(new DAL.Classes.BO.ProjetoBO().ListarProjetos(), "IdProjeto", "Nome",Model==null ?"":Model.FK_Requisito.IdProjeto.ToString());
+
+                SelectList requisitosEdit = null;
+                if (Model != null)
+                {
+                    requisitosEdit = new SelectList(new DAL.Classes.BO.ProjetoRequisitoBO().GetRequisitosDoProjeto(Model.FK_Requisito.IdProjeto),"IdRequisito", "Descricao",Model.IdRequisito);
+                }
+                    
+                
+            }
+
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/jquery-1.7.1.js"></script>
+<script>
+
+    $(document).ready(function () {
+        //Dropdownlist Selectedchange event
+
+        $("#ddlProjeto").change(function () {
+
+            $("#IdRequisito").empty();
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("GetRequisitos")', // we are calling json method
+
+                dataType: 'json',
+
+                data: { id: $("#ddlProjeto").val() },
+                // here we are get value of selected country and passing same value
+
+
+                success: function (states) {
+
+                    // states contains the JSON formatted list
+                    // of states passed from the controller
+
+                    $.each(states, function (i, state) {
+                        $("#IdRequisito").append('<option value="' + state.Value + '">' +
+                             state.Text + '</option>');
+                        // here we are adding option for States
+
+                    });
+                },
+                error: function (ex) {
+                    alert('Failed to retrieve states.' + ex);
+                }
+            });
+            return false;
+        })
+    });
+
+
+
+
+</script>
+
+
+            <fieldset>
+                <legend>Cadastrar Atividade</legend>
+
+                <div class="form-group">
+                    @Html.Label("Projeto")
+                    @Html.DropDownList("ddlProjeto", projetos, "selecione um projeto",new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.Label("Requisito")
+                    @Html.DropDownList("IdRequisito", Model== null ? new SelectList(string.Empty, "Value", "Text") : requisitosEdit, new  {@class="form-control" })
+                    @Html.ValidationMessageFor(model => model.IdRequisito)
+                </div>
+                <div class="form-group">
+                    @Html.Label("Descrição da atividade")
+                    @Html.TextAreaFor(m=>m.Descricao, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Descricao)
+                </div>
+                <div class="form-group">
+                    @Html.Label("Proposta de solução")
+                    @Html.TextAreaFor(model => model.Solucao, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Solucao)
+                </div>
+               
+                <div class="form-group">
+                    @Html.Label("Prioridade")
+                    @Html.DropDownListFor(model => model.IdPrioridade, prioridades,"---",new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.IdPrioridade)
+                </div>
+                <div class="form-group">
+                    @Html.Label("Risco")
+                    @Html.DropDownListFor(model => model.IdRisco, riscos, "---", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.IdRisco)
+                </div>
+                <div class="form-group">
+                    @Html.Label("Custo (em horas)")
+                    @Html.TextBoxFor(model => model.Custo, new { @class = "form-control", @style="widht:10px" })
+                    @Html.ValidationMessageFor(model=>model.Custo)
+                </div>
+                <div class="form-group">
+                    @Html.Label("Observações (opcional)")
+                    @Html.TextAreaFor(model => model.Observacao, new { @class = "form-control" })
+                   
+                </div>
+                @if (Model != null)
+                { @Html.HiddenFor(model => model.IdAtividade) }
+              
+
+            </fieldset>
+
+
+
+
+
+
