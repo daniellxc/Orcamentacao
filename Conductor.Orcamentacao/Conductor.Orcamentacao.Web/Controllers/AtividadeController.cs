@@ -38,7 +38,7 @@ namespace Conductor.Orcamentacao.Web.Controllers
                 bool edit = atividade.IdAtividade != 0;
                 _DAO.Salvar(atividade);
                 if (edit)
-                    return RedirectToAction("Index", "Atividade", new { idRequisito = atividade.IdRequisito }).ComMensagemDeSucesso("Atividade atualizada com sucesso");
+                    return RedirectToAction("Index", "Atividade", new { idRequisito = atividade.IdRequisito }).ComMensagemDeSucesso(Mensagem.GetMensagem(this.ToString(),"Atualizar"));
                 return RedirectToAction("CadastrarAtividade").ComMensagemDeSucesso(Mensagem.GetMensagem(this.ToString(),"SalvarAtividade"));
             }
             catch(Exception ex)
